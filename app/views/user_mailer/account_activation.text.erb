@@ -1,0 +1,4 @@
+Olá <%= @user.name %>,
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= URI::encode("http://localhost:9000/account/activation?token=#{@user.activation_token}&email=#{CGI::escape(@user.email)}") %>
